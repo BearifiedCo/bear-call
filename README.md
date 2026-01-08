@@ -1,8 +1,12 @@
 # Bear Call
 
-Voice escalation for AI agents. When Claude needs immediate human attention, Bear makes it happen with a phone call.
+**Part of [Bear Suite](https://github.com/BearifiedCo/bear-suite) — The intelligent AI collaboration toolkit**
 
-**By BearifiedCo** | MIT License
+Voice escalation for AI agents. When Claude needs immediate human attention, Bear Call makes it happen with a phone call.
+
+**By [BearifiedCo](https://bearified.co)** | MIT License
+
+---
 
 ## The Problem
 
@@ -22,7 +26,11 @@ Bear Call lets Claude Code make actual voice calls using ElevenLabs AI voice syn
 /bear-call "Production API returning 500 errors, need rollback approval" --urgency critical
 ```
 
-Bear's calling! The human's phone rings with a professional AI voice explaining the situation.
+**Bear's calling!** The human's phone rings with a professional AI voice explaining the situation.
+
+**Philosophy**: *"When the bear calls, you answer."*
+
+---
 
 ## How It Works
 
@@ -38,15 +46,19 @@ Bear's calling! The human's phone rings with a professional AI voice explaining 
                                                 └─────────────────┘
 ```
 
+---
+
 ## Prerequisites
 
 Bear Call requires a configured voice calling backend:
 
-1. **ElevenLabs Account** - AI voice synthesis
-2. **Twilio Account** - Phone call infrastructure
-3. **bearco-voice-ai Service** - Orchestration (Railway deployment)
+1. **ElevenLabs Account** — AI voice synthesis
+2. **Twilio Account** — Phone call infrastructure
+3. **bearco-voice-ai Service** — Orchestration (Railway deployment)
 
 See `~/claude-cto/voice-calling/README.md` for backend setup.
+
+---
 
 ## Installation
 
@@ -54,7 +66,7 @@ See `~/claude-cto/voice-calling/README.md` for backend setup.
 
 ```bash
 # Clone the plugin
-git clone https://github.com/bearifiedco/bear-call.git
+git clone https://github.com/BearifiedCo/bear-call.git
 
 # Use with Claude Code
 claude --plugin-dir /path/to/bear-call
@@ -65,6 +77,8 @@ claude --plugin-dir /path/to/bear-call
 ```bash
 cp -r bear-call ~/.claude/plugins/
 ```
+
+---
 
 ## Commands
 
@@ -102,6 +116,8 @@ View recent call history and queued calls.
 /bear-call-history
 ```
 
+---
+
 ## Escalation Skill
 
 Bear Call includes an escalation guidance skill that helps Claude decide when a voice call is appropriate vs other communication methods.
@@ -119,13 +135,18 @@ Bear Call includes an escalation guidance skill that helps Claude decide when a 
 - Questions that can wait (use email)
 - Non-urgent blockers (use ClickUp/Linear)
 
+---
+
 ## Configuration
 
 Bear Call uses the voice-calling backend at `~/claude-cto/voice-calling/`.
 
 Required environment variables (in `.env`):
-- `VOICE_SERVICE_URL` - bearco-voice-ai Railway URL
-- Twilio and ElevenLabs credentials (backend-side)
+- `VOICE_SERVICE_URL` — bearco-voice-ai Railway URL
+
+Twilio and ElevenLabs credentials are configured backend-side.
+
+---
 
 ## Architecture
 
@@ -136,12 +157,15 @@ bear-call/
 ├── commands/
 │   ├── bear-call.md      # Main call command
 │   ├── bear-call-test.md # Test command
-│   └── bear-call-history.md # History command
+│   ├── bear-call-history.md # History command
+│   └── bear-call-spawn-pair.md # Bear Suite integration
 ├── skills/
 │   └── escalation-guidance/
 │       └── SKILL.md      # When to escalate
 └── README.md
 ```
+
+---
 
 ## Requirements
 
@@ -149,6 +173,8 @@ bear-call/
 - Node.js (for voice-calling backend)
 - Claude Code
 - Configured voice-calling backend
+
+---
 
 ## Comparison with CallMe
 
@@ -180,9 +206,11 @@ bear-call/
 - Don't want to manage backend services
 - Need multi-turn conversations built-in
 
+---
+
 ## Bear Suite Integration
 
-Bear Call works with Bear Pair for complete AI-human collaboration:
+Bear Call works seamlessly with [Bear Pair](https://github.com/BearifiedCo/bear-pair) for complete AI-human collaboration:
 
 ```
 Human receives Bear Call
@@ -199,12 +227,30 @@ Human guides → Bears continue
 ```
 
 **Commands:**
-- `/bear-call-spawn-pair <task>` - Spawn Bear Pair from a call context
+- `/bear-call-spawn-pair <task>` — Spawn Bear Pair from a call context
 
 **Install both for full Bear Suite:**
 ```bash
 claude --plugin-dir ~/plugins/bear-call --plugin-dir ~/plugins/bear-pair
 ```
+
+---
+
+## When to Use Bear Call
+
+**Ideal for:**
+- Production incidents requiring human decisions
+- Security alerts needing immediate response
+- Approval workflows with time sensitivity
+- Critical blockers during autonomous operations
+- Emergency escalations from Bear Pair
+
+**Not designed for:**
+- Routine status updates
+- Non-urgent questions
+- Tasks that can wait for async response
+
+---
 
 ## Future Plans
 
@@ -214,17 +260,21 @@ claude --plugin-dir ~/plugins/bear-call --plugin-dir ~/plugins/bear-pair
 - [ ] Multi-recipient calls
 - [ ] Call transcription
 
+---
+
 ## License
 
-MIT License - Free to use, modify, and distribute.
+MIT License — Free to use, modify, and distribute.
+
+---
 
 ## Credits
 
-**BearifiedCo** - Making AI development friendlier, one bear at a time.
+**[BearifiedCo](https://bearified.co)** — Making AI development friendlier, one bear at a time.
 
-Built with:
-- [ElevenLabs](https://elevenlabs.io) - AI Voice Synthesis
-- [Twilio](https://twilio.com) - Voice Infrastructure
+**Built with:**
+- [ElevenLabs](https://elevenlabs.io) — AI Voice Synthesis
+- [Twilio](https://twilio.com) — Voice Infrastructure
 
 ---
 
