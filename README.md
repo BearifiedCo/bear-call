@@ -180,6 +180,32 @@ bear-call/
 - Don't want to manage backend services
 - Need multi-turn conversations built-in
 
+## Bear Suite Integration
+
+Bear Call works with Bear Pair for complete AI-human collaboration:
+
+```
+Human receives Bear Call
+        ↓
+"Start a Bear Pair session"
+        ↓
+/bear-call-spawn-pair "Fix the API errors"
+        ↓
+Driver + Navigator work on fix
+        ↓
+Navigator catches issue → Bear Call alerts human
+        ↓
+Human guides → Bears continue
+```
+
+**Commands:**
+- `/bear-call-spawn-pair <task>` - Spawn Bear Pair from a call context
+
+**Install both for full Bear Suite:**
+```bash
+claude --plugin-dir ~/plugins/bear-call --plugin-dir ~/plugins/bear-pair
+```
+
 ## Future Plans
 
 - [ ] Two-way conversation support
