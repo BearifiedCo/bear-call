@@ -1,0 +1,23 @@
+{
+  "name": "bear-call",
+  "version": "1.0.0",
+  "description": "Voice escalation for AI agents. When Claude needs immediate human attention, Bear Call makes it happen with a phone call.",
+  "author": {
+    "name": "BearifiedCo",
+    "email": "alex@bearified.co",
+    "url": "https://bearified.co"
+  },
+  "repository": "https://github.com/bearifiedco/bear-call",
+  "homepage": "https://github.com/bearifiedco/bear-call#readme",
+  "license": "MIT",
+  "keywords": [
+    "voice",
+    "phone",
+    "escalation",
+    "twilio",
+    "elevenlabs",
+    "ai-voice",
+    "urgent",
+    "notifications"
+  ]
+}
